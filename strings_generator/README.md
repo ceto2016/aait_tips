@@ -2,7 +2,9 @@
 strings generator use watcher package 
 so add it 
 ```watcher: ^{lastest_version}```
-then type in terminal
+
+**then type in terminal**
+
 ``` dart generate/strings/main.dart```
 now the genrator is working and listen to every change in lang.json file but
 first create lang.json file in assets/translations directory
