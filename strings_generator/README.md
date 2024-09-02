@@ -33,3 +33,5 @@ static String get login => _login.tr();
 "checkInternet #$ Check your internet connection": "تحقق من اتصالك بالانترنت"
 ```
 **Write the custom key then “ #$ “ then the English  value**
+
+## keep the terminal (that you run the genrator in it) open till you finish from adding words
