@@ -114,7 +114,7 @@ Arabic names may consist of Arabic letters and spaces, optionally allowing a few
 ```
 
 **Example Valid Names**:  
-`محمد خالد`, `عبدالله-العتيبي`
+`محمد خالد`, `عبدالله-التركي`
 
 ---
 
