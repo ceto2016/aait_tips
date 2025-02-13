@@ -65,7 +65,7 @@ String flavorAsset({
 } 
 
 ## FlavorBuilder
-
+```
 class FlavorBuilder extends StatelessWidget {
   const FlavorBuilder({super.key, this.user, this.provider, this.builder});
   final Widget? user;
@@ -87,3 +87,4 @@ class FlavorBuilder extends StatelessWidget {
     return const SizedBox();
   }
 }
+```
