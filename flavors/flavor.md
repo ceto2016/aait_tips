@@ -22,7 +22,7 @@
     [Provider]  com.aait.flutter.mumayaz.provider      |     com.aait.flutter.mumayaz.provider
 
 ## BUILD APK && IPA:
-
+```
 - For IOS :
   flutter build ipa --flavor user -t lib/main_user.dart
   flutter build ipa --flavor provider -t lib/main_provider.dart
@@ -34,11 +34,11 @@
 - for Android [Build App Bundle] :
   flutter build appbundle --flavor user -t lib/main_user.dart
   flutter build appbundle --flavor provider -t lib/main_provider.dart
-
+```
 ## Flutter Fire Config Path [export PATH="$PATH":"$HOME/.pub-cache/bin"]
 
 ## Flutter Fire Apps Configs:
-
+```
     flutterfire config \
     --project=mumayaz-484a1 \
     --out=lib/features/user/user_firebase_options.dart \
@@ -50,9 +50,10 @@
     --out=lib/features/provider/provider_firebase_options.dart \
     --android-package-name=com.aait.flutter.mumayaz.provider \
     --ios-bundle-id=com.aait.flutter.mumayaz.provider
-
+```
 <!-- flutterfire configure --project=ajrni-5dbcc -->
 ## flavorAsset
+```
 String flavorAsset({
   required String userAsset,
   required String providerAsset,
@@ -63,6 +64,7 @@ String flavorAsset({
     return providerAsset;
   }
 } 
+```
 
 ## FlavorBuilder
 ```
