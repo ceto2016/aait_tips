@@ -59,3 +59,16 @@ class RiyalPriceText extends StatelessWidget {
     ));
   }
 }
+
+
+extension RiyalPrice on Text {
+  static const IconData saudiRiyalSymbol2 =
+      IconData(0xe800, fontFamily: 'Riyal');
+
+  Widget withRiyalPrice() {
+    return RiyalPriceText(
+        price: data.toString(),
+        priceTextStyle: style,
+        currencyTextStyle: style);
+  }
+}

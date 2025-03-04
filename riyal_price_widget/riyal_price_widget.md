@@ -43,7 +43,13 @@ RiyalPriceText(
   style: TextStyle(fontSize: 20, color: Colors.green),
 ),
 ```
-
+## Or just use the extension (withRiyalPrice) on Text Widget
+```dart
+Text(
+              "100",
+              style: TextStyle(color: ColorManager.primaryColor, fontSize: 20),
+            ).withRiyalPrice()
+```
 ### Example Output
 
 # "500" → Displays as "500 ريال"
