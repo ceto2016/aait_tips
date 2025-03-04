@@ -50,5 +50,9 @@ RiyalPriceText(
 # "1000 SAR" → Displays as "1000 ريال"
 # "750 ريال" → Displays as "750 ريال"
 
+## if you wnat to use icons in Text use this 
+[fluttericonGenerator](https://www.fluttericon.com)
+
+
 ## Preview
 ![image](image.png)
