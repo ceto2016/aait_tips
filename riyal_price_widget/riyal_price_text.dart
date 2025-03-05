@@ -6,6 +6,10 @@ import 'package:flutter/widgets.dart';
 ///   fonts:
 ///     - asset: assets/fonts/riyal.ttf
 ///
+
+
+   const IconData saudiRiyalSymbolIconData =
+      IconData(0xe800, fontFamily: 'Riyal');
 class RiyalPriceText extends StatelessWidget {
   final String price;
   final TextStyle? priceTextStyle;
@@ -30,8 +34,6 @@ class RiyalPriceText extends StatelessWidget {
     }
   }
 
-  static const IconData saudiRiyalSymbol2 =
-      IconData(0xe800, fontFamily: 'Riyal');
   @override
   Widget build(BuildContext context) {
     // Example: Using a custom icon from a font family
@@ -43,15 +45,15 @@ class RiyalPriceText extends StatelessWidget {
         TextSpan(text: "${getPrice()} "),
         WidgetSpan(
           child: Text(
-            String.fromCharCode(saudiRiyalSymbol2.codePoint),
+            String.fromCharCode(saudiRiyalSymbolIconData.codePoint),
             style: currencyTextStyle?.copyWith(
-                  fontFamily: saudiRiyalSymbol2.fontFamily,
+                  fontFamily: saudiRiyalSymbolIconData.fontFamily,
                 ) ??
                 priceTextStyle?.copyWith(
-                  fontFamily: saudiRiyalSymbol2.fontFamily,
+                  fontFamily: saudiRiyalSymbolIconData.fontFamily,
                 ) ??
                 TextStyle(
-                  fontFamily: saudiRiyalSymbol2.fontFamily,
+                  fontFamily: saudiRiyalSymbolIconData.fontFamily,
                 ),
           ),
         ),
@@ -62,8 +64,6 @@ class RiyalPriceText extends StatelessWidget {
 
 
 extension RiyalPrice on Text {
-  static const IconData saudiRiyalSymbol2 =
-      IconData(0xe800, fontFamily: 'Riyal');
 
   Widget withRiyalPrice() {
     return RiyalPriceText(
