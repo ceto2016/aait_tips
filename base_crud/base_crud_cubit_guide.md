@@ -1188,6 +1188,7 @@ T baseIdAndNameEntityFromJson<T>(Map<String, dynamic> json) {
 
 ### 4. استخدام الـ Cubit في الـ UI
 ```dart
+// EX
 // في الـ Widget
 BlocProvider(
   create: (context) => GetBaseEntityCubit<CategoryEntity>(),
