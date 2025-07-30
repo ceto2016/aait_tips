@@ -1285,3 +1285,6 @@ GetBaseEntityUseCase<Genaric>
 ## الخلاصة
 
 النظام ده بيوفر foundation قوي للتعامل مع البيانات في التطبيق بطريقة منظمة وقابلة للصيانة. الـ Generics بتخلي الكود مرن وآمن في نفس الوقت، والـ Clean Architecture بتضمن إن كل جزء في النظام له مسئولية واضحة ومحددة.
+
+# Thanks
+Many thanks to Ahmed Salah for the inspiring ideas and great collaboration.
