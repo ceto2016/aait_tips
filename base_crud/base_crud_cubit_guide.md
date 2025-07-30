@@ -943,6 +943,7 @@ cubit.fGetBaseNameAndIdWithQuery(
 
 #### 4. Custom Mappers
 ```dart
+// EX
 // يمكن تمرير mapper مخصوص
 GetBaseEntityParams<CategoryEntity>(
   mapper: (json) => (json['categories'] as List)
