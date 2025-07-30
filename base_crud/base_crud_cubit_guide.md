@@ -1269,12 +1269,12 @@ if (state.dataState.isLoading) {
 بترن بس كوماند ال build runner مع كل حاجة ضفتها محتاج فيها 
 يحصل inject
 
-#### pub dev
-[injectable](https://pub.dev/packages/injectable)
-
 هيطلعلك في الفايل الي اتعمله  الي معمولة جينيارت ايرورو في 
 GetBaseEntityUseCase<Genaric> 
 شيل <Genaric> وهتظبط
+
+#### pub dev
+[injectable](https://pub.dev/packages/injectable)
 
 
 ## الخلاصة
