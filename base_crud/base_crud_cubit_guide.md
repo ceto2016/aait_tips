@@ -75,44 +75,6 @@ class UserCubit extends AsyncCubit<List<User>> {
       },
     );
   }
-  
-  // إضافة مستخدم جديد
-  Future<void> addUser(User newUser) async {
-    await executeAsync(
-      operation: () => baseCrudUseCase<User>(
-        CrudBaseParmas(
-          api: "users",
-          httpRequestType: HttpRequestType.post,
-          body: newUser.toJson(),
-          mapper: (json) => User.fromJson(json),
-        ),
-      ),
-      successEmitter: (addedUser) {
-        // إضافة المستخدم للقائمة الحالية
-        final currentUsers = List<User>.from(state.data);
-        currentUsers.add(addedUser);
-        updateData(currentUsers);
-      },
-    );
-  }
-  
-  // حذف مستخدم
-  Future<void> deleteUser(int userId) async {
-    await executeAsync(
-      operation: () => baseCrudUseCase<Map<String, dynamic>>(
-        CrudBaseParmas(
-          api: "users/$userId",
-          httpRequestType: HttpRequestType.delete,
-          mapper: (json) => json as Map<String, dynamic>,
-        ),
-      ),
-      successEmitter: (_) {
-        // إزالة المستخدم من القائمة
-        final currentUsers = state.data.where((user) => user.id != userId).toList();
-        updateData(currentUsers);
-      },
-    );
-  }
 }
 ```
 
