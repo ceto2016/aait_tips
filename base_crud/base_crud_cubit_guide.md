@@ -78,6 +78,76 @@ class UserCubit extends AsyncCubit<List<User>> {
 }
 ```
 
+## ملاحظة
+ انت هنا ينفع تضيف اكتر من ميثود بس اتاكد انه كلهم هيبقوا نفس ال ruturn type ,
+او انك متستخدمش executeAsync .. وتنادي بس baseCrudUseCase ومتعملش emit ,
+لو عايز بقي تعمل كيوبت اكثر تعقيدا ينفع تستخدم بس  baseCrudUseCase 
+جواه وتعمل cubit وال state علي مزاجك
+
+```dart
+  Future<void> _newPhone({required String code}) async {
+    final result = await baseCrudUseCase<String>(
+      CrudBaseParams(
+        api: verifyNewPhoneApi,
+        httpRequestType: HttpRequestType.post,
+        body: {'phone': phone, 'code': code, ...authBaseMap},
+        mapper: (value) =>
+            LocaleKeys.forget_password_reset_password_successfully.tr(),
+      ),
+    );
+    result.when(
+      (response) {
+        UserCubit.instance.refreshUser();
+        Go.back();
+        showSuccessToast(response);
+        emit(state.copyWith(status: BaseStatus.success));
+      },
+      (error) {
+        showErrorToast(error.message);
+        emit(state.copyWith(status: BaseStatus.error));
+      },
+    );
+  }
+
+  //resendCodeApi
+
+  Future<void> resendCode() async {
+    final result = await baseCrudUseCase<BaseUser>(
+      CrudBaseParams(
+        api: getResnedApi(verifyType),
+        httpRequestType: HttpRequestType.post,
+        body: {'phone': phone, ...authBaseMap},
+        mapper: (value) => BaseUser.fromJsonAuto(value),
+      ),
+    );
+    result.when(
+      (response) {
+        showSuccessToast(
+          LocaleKeys.verification_code_resended_successfully.tr(),
+        );
+        emit(state.copyWith(status: BaseStatus.success));
+      },
+      (error) {
+        showErrorToast(error.message);
+        emit(state.copyWith(status: BaseStatus.error));
+      },
+    );
+  }
+
+  Future<void> _changeUserLang() async {
+    final lang = Go.context.locale.languageCode;
+    await baseCrudUseCase(
+      CrudBaseParams(
+        api: changeLanguageApi,
+        httpRequestType: HttpRequestType.patch,
+        body: {'lang': lang, ...authBaseMap},
+        mapper: (data) => data['msg'],
+      ),
+    );
+  }
+```
+
+
 #### 2. استخدام UserCubit في UI
 ```dart
 class UsersPage extends StatelessWidget {
