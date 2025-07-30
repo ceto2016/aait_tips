@@ -480,12 +480,13 @@ class CenterErrorWidget extends StatelessWidget {
 #### استخدام مبسط جداً
 
 ```dart
+// EX
 // للاستخدام السريع بدون تخصيص
+
 StatusBuilder<String>(
   data: state,
   onSuccess: (message, context) => Text(message),
 )
-
 // هيستخدم التصميم الافتراضي للتحميل والأخطاء
 ```
 
