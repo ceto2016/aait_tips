@@ -911,6 +911,7 @@ class _CityRegionDropdownsState extends State<CityRegionDropdowns> {
 
 #### 1. النمط الموحد
 ```dart
+// EX
 // نفس الطريقة لكل الـ entities
 final categoryCubit = GetBaseEntityCubit<CategoryEntity>();
 final regionsCubit = GetBaseEntityCubit<RegionEntity>();
@@ -919,6 +920,7 @@ final citiesCubit = GetBaseEntityCubit<CityEntity>();
 
 #### 2. Generic Type Safety
 ```dart
+// EX
 // الـ Cubit بيضمن إن النوع صحيح في كل مرحلة
 GetBaseEntityCubit<CategoryEntity> // هيرجع List<CategoryEntity> بس
 GetBaseEntityCubit<RegionEntity>   // هيرجع List<RegionEntity> بس
