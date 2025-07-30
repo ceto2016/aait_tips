@@ -1263,11 +1263,14 @@ if (state.dataState.isLoading) {
 ```
 
 ## injectable
+
 استخدمنا ال injectable package بدل من ال get it 
 هي مبنية عليها وبتعمل نفس كل حاجة بس الفرق انها مجرد بتعمل نوتاشن فوق الكلاسيس وبتعمل جينيرات للكود 
 بترن بس كوماند ال build runner مع كل حاجة ضفتها محتاج فيها 
 يحصل inject
-[URL](https://pub.dev/packages/injectable)
+
+# pub dev
+[injectable](https://pub.dev/packages/injectable)
 
 هيطلعلك في الفايل الي اتعمله  الي معمولة جينيارت ايرورو في 
 GetBaseEntityUseCase<Genaric> 
